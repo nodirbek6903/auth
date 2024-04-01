@@ -38,9 +38,11 @@ const Login = () => {
       if (data.success) {
         navigate("/");
       }
+      else{
+          setError("Login yoki parol xato kiritildi")
+      }
     } catch (error) {
       console.error(error);
-      setError(error.message);
     }
   };
   return (
@@ -61,7 +63,7 @@ const Login = () => {
         />
         <button type="submit">Submit</button>
       </form>
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
     </div>
   );
 };
