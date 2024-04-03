@@ -36,7 +36,7 @@ const Login = () => {
       localStorage.setItem("access_token",token)
     //   tekshiruv
       if (data.success) {
-        navigate("/");
+        navigate("/home");
       }
       else{
           setError("Login yoki parol xato kiritildi")
