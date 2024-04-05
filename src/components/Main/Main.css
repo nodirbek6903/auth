@@ -62,4 +62,5 @@ tr td:first-child{
     font-weight: bold;
     padding: 10px 15px;
     cursor: pointer;
+    border: none;
 }
