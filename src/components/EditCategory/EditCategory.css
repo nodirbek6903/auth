@@ -1,0 +1,34 @@
+.edit-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-field {
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="file"],
+  button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .save-btn {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .save-btn:hover {
+    background-color: #0056b3;
+  }
+  

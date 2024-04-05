@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./login.css";
+import "./Login.css";
+import {toast} from "react-toastify"
 const Login = () => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -29,17 +29,18 @@ const Login = () => {
           }),
         }
       );
-      setError(null);
       const data = await response.json();
-    //   token saqlash
+      //   token saqlash
       const token = data?.data?.tokens?.accessToken?.token;
-      localStorage.setItem("access_token",token)
-    //   tekshiruv
+      localStorage.setItem("access_token", token);
+      //   tekshiruv
       if (data.success) {
-        navigate("/home");
-      }
-      else{
-          setError("Login yoki parol xato kiritildi")
+        toast.success("Tizimga muvaffaqqiyatli kirdingiz!!!",{
+          autoClose: 2000,
+        })
+        navigate("/");
+      } else {
+        toast.error("Login yoki parol xato kiritildi");
       }
     } catch (error) {
       console.error(error);
@@ -47,23 +48,24 @@ const Login = () => {
   };
   return (
     <div className="login-container">
-      <form action="" onSubmit={handleSubmit}>
-        <h1>Kirish</h1>
+      <form action="" className="login">
+        <h1>Login</h1>
         <input
           type="text"
-          placeholder="Login"
           value={login}
           onChange={handleLogin}
+          placeholder="login"
         />
         <input
           type="password"
-          placeholder="Password"
           value={password}
           onChange={handlePassword}
+          placeholder="password"
         />
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={handleSubmit}>
+          Login
+        </button>
       </form>
-      {error && <p className="error">{error}</p>}
     </div>
   );
 };

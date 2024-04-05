@@ -3,12 +3,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.log-btn{
-  padding: 5px 20px;
-  cursor: pointer;
-  border-radius: 10px;
-  border: none;
-  background: green;
-  color: #fff;
-}
