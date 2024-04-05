@@ -10,6 +10,9 @@ const EditCategory = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
+
+  const imgUrl = "https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/"
+
   const fetchData = async () => {
     try {
       const token = localStorage.getItem("access_token");
@@ -26,6 +29,7 @@ const EditCategory = () => {
         const data = await response.json();
         setNameEN(data?.data?.name_en);
         setNameRU(data?.data?.name_ru);
+        setImage([imgUrl + data?.data?.image_src])
       } else {
         console.log("Failed to fetch data");
       }
@@ -37,6 +41,8 @@ const EditCategory = () => {
   useEffect(() => {
     fetchData();
   }, [id]);
+
+  console.log(images);
 
   const handleSaveClick = async (e) => {
     e.preventDefault();
@@ -72,17 +78,20 @@ const EditCategory = () => {
     <div className="container">
       <div className="edit-container">
       <form action="" className="form-container" onSubmit={handleSaveClick}>
+        <img src={images} className="img" alt="" />
         <input
           type="text"
           value={nameEN}
           onChange={(e) => setNameEN(e.target.value)}
+          className="input-field"
         />
         <input
           type="text"
           value={nameRU}
           onChange={(e) => setNameRU(e.target.value)}
+          className="input-field"
         />
-        <input type="file" onChange={(e) => setImage([...e.target.files])} />
+        <input type="file" className="file-input" onChange={(e) => setImage([...e.target.files])} />
         <button type="submit" className="save-btn">
           Save
         </button>

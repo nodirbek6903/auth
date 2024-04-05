@@ -1,36 +1,51 @@
-.container{
+.container {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.edit-container {
-    max-width: 400px;
     margin: 0 auto;
     padding: 20px;
   }
   
+  .edit-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
   .form-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    gap: 20px;
   }
   
   .input-field {
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"],
-  input[type="file"],
-  button {
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    outline: none;
+  }
+  
+  .file-input {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+  }
+  .img {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
   }
   
   .save-btn {
     background-color: #007bff;
     color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
     cursor: pointer;
   }
   

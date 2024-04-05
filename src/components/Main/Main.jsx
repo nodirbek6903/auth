@@ -31,6 +31,8 @@ const Main = () => {
     }
   };
 
+  const imgUrl = "https://autoapi.dezinfeksiyatashkent.uz/api/uploads/images/"
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -74,7 +76,7 @@ const Main = () => {
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>
-                    <img src={item.image_src} alt="" />
+                    <img width={60} height={40} src={`${imgUrl}${item.image_src}`}  alt="" />
                   </td>
                   <td>{item.id}</td>
                   <td>{item.name_en}</td>
