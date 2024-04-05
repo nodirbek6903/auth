@@ -69,7 +69,8 @@ const EditCategory = () => {
   };
 
   return (
-    <div className="edit-container">
+    <div className="container">
+      <div className="edit-container">
       <form action="" className="form-container" onSubmit={handleSaveClick}>
         <input
           type="text"
@@ -86,6 +87,7 @@ const EditCategory = () => {
           Save
         </button>
       </form>
+    </div>
     </div>
   );
 };
