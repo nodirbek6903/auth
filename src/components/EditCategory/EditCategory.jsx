@@ -55,7 +55,7 @@ const EditCategory = () => {
       images.forEach((image) => {
         formData.append("images", image);
       });
-      await fetch(
+      const response =await fetch(
         `https://autoapi.dezinfeksiyatashkent.uz/api/categories/${id}`,
         {
           method: "PUT",
@@ -65,10 +65,14 @@ const EditCategory = () => {
           body: formData,
         }
       );
-      navigate("/");
-      toast.success("Malumot muvaffaqqiyatli o'zgartirildi!",{
-        autoClose:2000
-      });
+      if(response.status === 500){
+        toast.error("Malumot saqlashda xatolik yuz berdi!!!")
+      }else{
+        toast.success("Malumot muvaffaqqiyatli o'zgartirildi!",{
+          autoClose:2000
+        })
+        navigate("/");
+      }
     } catch (error) {
       console.log(error.message);
     }

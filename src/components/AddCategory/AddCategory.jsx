@@ -20,18 +20,22 @@ const AddCategory = () => {
       formData.append("images", image);
     });
 
-    await fetch("https://autoapi.dezinfeksiyatashkent.uz/api/categories", {
+    const response =  await fetch("https://autoapi.dezinfeksiyatashkent.uz/api/categories", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
       },
       body: formData,
     });
-    toast.success("Malumot muvaffaqqiyatli saqlandi!!!",{
-      autoClose:2000
-    })
-    navigate("/");
 
+    if(response.status === 500){
+      toast.error("Malumot saqlashda xatolik yuz berdi!!!")
+    }else{
+      toast.success("Malumot muvaffaqqiyatli saqlandi!!!",{
+        autoClose:2000
+      })
+      navigate("/");
+    }
   };
   return (
     <div className="container">
