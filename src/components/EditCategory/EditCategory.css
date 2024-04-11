@@ -52,4 +52,7 @@
   .save-btn:hover {
     background-color: #0056b3;
   }
+  .btn-upload{
+    padding: 10px 0;
+  }
   
