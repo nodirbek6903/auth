@@ -55,7 +55,6 @@ tr td:first-child{
 }
 .add-buttons{
     display: flex;
-    justify-content: flex-end;
     margin-top: 20px;
     background: #3498db;
     color: #fff;
@@ -63,4 +62,18 @@ tr td:first-child{
     padding: 10px 15px;
     cursor: pointer;
     border: none;
+}
+.add-search{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-input{
+    width: 40%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background: #eee;
+    border: none;
+    outline: none;
 }

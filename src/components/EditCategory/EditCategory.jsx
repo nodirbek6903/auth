@@ -27,7 +27,6 @@ const EditCategory = () => {
           const data = await response.json();
           setNameEN(data?.data?.name_en);
           setNameRU(data?.data?.name_ru);
-          // setImage([imgUrl + data?.data?.image_src]);
           setPrevImage(imgUrl + data?.data?.image_src)
         } else {
           console.log("Failed to fetch data");
